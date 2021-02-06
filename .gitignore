@@ -1,2 +1,3 @@
-mysql/local-data/
+mariadb/local-data/
 mongo/local-data/
+mysql/local-data/
