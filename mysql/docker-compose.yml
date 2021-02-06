@@ -2,7 +2,7 @@ version: '3'
 services:
   mysql:
     container_name: mysql
-    image: mysql:latest
+    image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -14,7 +14,7 @@ services:
 
   adminer:
     container_name: adminer
-    image: adminer:latest
+    image: adminer
     restart: always
     environment:
         ADMINER_DEFAULT_SERVER: mysql
