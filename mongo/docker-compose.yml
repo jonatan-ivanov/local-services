@@ -8,7 +8,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     # volumes:
-    #   - ./local-data:/data # does not wrk on mac or windows because of the docker vm: https://docs.mongodb.com/manual/administration/production-notes/#fsync-on-directories
+    #   - ./local-data:/data # does not work on mac or windows because of the docker vm: https://docs.mongodb.com/manual/administration/production-notes/#fsync-on-directories
     ports:
       - 27017:27017
 
