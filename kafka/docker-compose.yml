@@ -1,8 +1,8 @@
 version: '3'
 services:
     zookeeper:
-        image: wurstmeister/zookeeper
         container_name: zookeeper
+        image: wurstmeister/zookeeper
         restart: always
         ports:
             - 2181:2181
@@ -23,8 +23,8 @@ services:
         depends_on:
             - zookeeper
     kafdrop:
-        image: obsidiandynamics/kafdrop
         container_name: kafdrop
+        image: obsidiandynamics/kafdrop
         restart: always
         ports:
             - 9000:9000
