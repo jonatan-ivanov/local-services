@@ -1,0 +1,17 @@
+version: '3'
+services:
+    toxiproxy:
+        container_name: toxiproxy
+        image: shopify/toxiproxy
+        command: -host=0.0.0.0 -config /config/toxiproxy.json
+        restart: always
+        volumes:
+            - ./config:/config
+        ports:
+            - 8474:8474
+            - 8800:8800
+            - 8801:8801
+            - 8802:8802
+
+# /go/bin/toxiproxy-cli create httpbin --listen :8888 --upstream httpbin.org:443
+# /go/bin/toxiproxy-cli toxic add httpbin -t latency -a latency=5000
