@@ -1,0 +1,28 @@
+[
+    {
+        "httpRequest": {
+            "path": "/firstExample"
+        },
+        "httpResponse": {
+            "body": "firstResponse"
+        }
+    },
+    {
+        "httpRequest": {
+            "path": "/secondExample"
+        },
+        "httpResponse": {
+            "body": "secondResponse"
+        }
+    },
+    {
+        "httpRequest": {
+            "path": "/.*"
+        },
+        "httpForward": {
+            "host": "httpbin.org",
+            "port": 443,
+            "scheme": "HTTPS"
+        }
+    }
+]

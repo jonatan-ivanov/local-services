@@ -1,0 +1,12 @@
+version: '3'
+services:
+    mockserver:
+        container_name: mockserver
+        image: mockserver/mockserver
+        restart: always
+        volumes:
+            - ./config:/config
+        ports:
+            - 1080:1080
+
+# http://localhost:1080/mockserver/dashboard
