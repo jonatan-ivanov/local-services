@@ -1,0 +1,14 @@
+version: '3'
+services:
+    artifactory:
+        container_name: artifactory
+        image: releases-docker.jfrog.io/jfrog/artifactory-oss
+        restart: always
+        volumes:
+            - ./local-data:/var/opt/jfrog/artifactory
+        ports:
+            - 8081:8081
+            - 8082:8082
+
+# http://localhost:8082/ui/
+# creds: admin:password

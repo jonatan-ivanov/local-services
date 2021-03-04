@@ -2,3 +2,7 @@ elasticsearch/local-data/
 mariadb/local-data/
 mongo/local-data/
 mysql/local-data/
+artifactory/local-data/*
+!artifactory/local-data/etc/
+artifactory/local-data/etc/*
+!artifactory/local-data/etc/system.yaml
