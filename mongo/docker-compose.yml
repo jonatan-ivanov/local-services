@@ -1,25 +1,25 @@
-version: '3'
+version: "3"
 services:
-  mongo:
-    container_name: mongo
-    image: mongo
-    restart: always
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: password
-    # volumes:
-    #   - ./local-data:/data # does not work on mac or windows because of the docker vm: https://docs.mongodb.com/manual/administration/production-notes/#fsync-on-directories
-    ports:
-      - 27017:27017
+    mongo:
+        container_name: mongo
+        image: mongo
+        restart: always
+        # environment:
+        #   MONGO_INITDB_ROOT_USERNAME: root
+        #   MONGO_INITDB_ROOT_PASSWORD: password
+        # volumes:
+        #   - ./local-data:/data # does not work on mac or windows because of the docker vm: https://docs.mongodb.com/manual/administration/production-notes/#fsync-on-directories
+        ports:
+            - 27017:27017
 
-  mongo-express:
-    container_name: mongo-express
-    image: mongo-express
-    restart: always
-    # environment:
-    #   ME_CONFIG_MONGODB_ADMINUSERNAME: root
-    #   ME_CONFIG_MONGODB_ADMINPASSWORD: password
-    depends_on:
-      - mongo
-    ports:
-      - 8888:8081
+    mongo-express:
+        container_name: mongo-express
+        image: mongo-express
+        restart: always
+        # environment:
+        #   ME_CONFIG_MONGODB_ADMINUSERNAME: root
+        #   ME_CONFIG_MONGODB_ADMINPASSWORD: password
+        depends_on:
+            - mongo
+        ports:
+            - 8888:8081

@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     toxiproxy:
         container_name: toxiproxy
@@ -12,6 +12,5 @@ services:
             - 8800:8800
             - 8801:8801
             - 8802:8802
-
 # /go/bin/toxiproxy-cli create httpbin --listen :8888 --upstream httpbin.org:443
 # /go/bin/toxiproxy-cli toxic add httpbin -t latency -a latency=5000

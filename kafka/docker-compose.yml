@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     zookeeper:
         container_name: zookeeper

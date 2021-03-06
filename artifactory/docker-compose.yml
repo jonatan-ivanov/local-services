@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     artifactory:
         container_name: artifactory
@@ -9,6 +9,5 @@ services:
         ports:
             - 8081:8081
             - 8082:8082
-
 # http://localhost:8082/ui/
 # creds: admin:password

@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
     nexus:
         container_name: nexus
@@ -6,7 +6,6 @@ services:
         restart: always
         ports:
             - 8081:8081
-
 # http://localhost:8081/nexus/service/local/status
 # http://localhost:8081/nexus/
 
