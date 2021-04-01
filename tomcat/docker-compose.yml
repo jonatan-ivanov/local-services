@@ -1,0 +1,10 @@
+version: "3"
+services:
+    tomcat:
+        container_name: tomcat
+        image: tomcat
+        restart: always
+        volumes:
+            - ./webapps:/usr/local/tomcat/webapps
+        ports:
+            - 8080:8080
