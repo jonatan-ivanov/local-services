@@ -1,0 +1,9 @@
+version: "3"
+services:
+    maildev:
+        container_name: maildev
+        image: djfarrelly/maildev
+        restart: always
+        ports:
+            - 80:80
+            - "25:25" # quotes are needed because of a bug in the yml parser
