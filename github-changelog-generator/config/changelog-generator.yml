@@ -1,0 +1,21 @@
+changelog:
+    repository: micrometer-metrics/micrometer
+    sections:
+        - title: ':warning: Noteworthy'
+          labels: ['release notes']
+          group: "noteworthy"
+        - title: ':star: New Features / Enhancements'
+          labels: ['enhancement']
+        - title: ':beetle: Bug Fixes'
+          labels: ['bug', 'regression']
+        - title: ':notebook_with_decorative_cover: Documentation'
+          labels: ['doc-update', 'documentation']
+        - title: ':hammer: Dependency Upgrades'
+          labels: ['dependency-upgrade']
+        - title: ':memo: Tasks'
+          labels: ['type: task']
+    contributors.exclude.names: ['shakuzen', 'jonatan-ivanov']
+
+github:
+    username: abc
+    password: xyz

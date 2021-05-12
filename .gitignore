@@ -1,9 +1,11 @@
-elasticsearch/local-data/
-mariadb/local-data/
-mongo/local-data/
-mysql/local-data/
-tomcat/webapps/ROOT/
 artifactory/local-data/*
 !artifactory/local-data/etc/
 artifactory/local-data/etc/*
 !artifactory/local-data/etc/system.yaml
+
+elasticsearch/local-data/
+github-changelog-generator/generated/
+mariadb/local-data/
+mongo/local-data/
+mysql/local-data/
+tomcat/webapps/ROOT/
