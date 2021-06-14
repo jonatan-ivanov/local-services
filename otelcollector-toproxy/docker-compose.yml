@@ -1,0 +1,32 @@
+version: "3"
+services:
+    wavefront-proxy:
+        container_name: wavefront-proxy
+        image: wavefronthq/proxy:latest
+        restart: always
+        environment:
+            WAVEFRONT_URL: ${WAVEFRONT_URL}
+            WAVEFRONT_TOKEN: ${WAVEFRONT_TOKEN}
+            JAVA_HEAP_USAGE: 512m # you mean MaxHeap, right?
+        ports:
+            - "2878:2878"
+
+    otel:
+        container_name: otel
+        image: otel/opentelemetry-collector-contrib
+        restart: always
+        volumes:
+            - ./config:/etc/otel
+        depends_on:
+            - wavefront-proxy
+        ports:
+            - "4317:4317"   # gRPC
+            - "9411:9411"   # Zipkin
+            - "55679:55679" # zpages extension
+            - "55680:55680" # Legacy gRPC
+            - "1888:1888"   # pprof extension
+            - "8888:8888"   # Prometheus metrics exposed by the collector
+            - "8889:8889"   # Prometheus exporter metrics
+            - "13133:13133" # health_check extension
+
+# export 'WAVEFRONT_URL=https://<host>/api/'; export WAVEFRONT_TOKEN="$(cat secret)"

@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+  zipkin:
+
+processors:
+  batch:
+    timeout: 10s
+
+exporters:
+  tanzuobservability:
+    traces:
+      endpoint: "http://wavefront-proxy:2878"
+
+extensions:
+  health_check:
+  pprof:
+  zpages:
+
+service:
+  extensions: [pprof, zpages, health_check]
+  pipelines:
+    traces:
+      receivers: [otlp, zipkin]
+      processors: [batch]
+      exporters: [tanzuobservability]
