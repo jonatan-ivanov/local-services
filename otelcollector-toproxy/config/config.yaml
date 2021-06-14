@@ -11,7 +11,7 @@ processors:
 exporters:
   tanzuobservability:
     traces:
-      endpoint: "http://wavefront-proxy:2878"
+      endpoint: "http://wavefront-proxy:2879"
 
 extensions:
   health_check:

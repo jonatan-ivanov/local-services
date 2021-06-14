@@ -7,9 +7,11 @@ services:
         environment:
             WAVEFRONT_URL: ${WAVEFRONT_URL}
             WAVEFRONT_TOKEN: ${WAVEFRONT_TOKEN}
+            WAVEFRONT_PROXY_ARGS: "--customTracingListenerPorts 2879"
             JAVA_HEAP_USAGE: 512m # you mean MaxHeap, right?
         ports:
             - "2878:2878"
+            - "2879:2879"
 
     otel:
         container_name: otel
