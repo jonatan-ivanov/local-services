@@ -1,0 +1,16 @@
+version: "3"
+services:
+    glances:
+        container_name: glances
+        image: nicolargo/glances
+        restart: always
+        pid: host
+        network_mode: host
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        environment:
+            discovery.type: single-node
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+
+# docker-compose up --no-log-prefix
