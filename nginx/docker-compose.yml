@@ -1,0 +1,10 @@
+version: "3"
+services:
+    nginx:
+        container_name: nginx
+        image: nginx
+        restart: always
+        volumes:
+            - ./content:/usr/share/nginx/html:ro
+        ports:
+            - 80:80
