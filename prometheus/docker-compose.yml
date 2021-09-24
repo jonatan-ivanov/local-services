@@ -4,6 +4,9 @@ services:
         image: prom/prometheus
         container_name: prometheus
         restart: always
+        command:
+            - --enable-feature=exemplar-storage
+            - --config.file=/etc/prometheus/prometheus.yml
         volumes:
             - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
         ports:
