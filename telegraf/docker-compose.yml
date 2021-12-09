@@ -1,0 +1,10 @@
+version: "3"
+services:
+    telegraf:
+        image: telegraf
+        container_name: telegraf
+        restart: always
+        volumes:
+            - ./config/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+        ports:
+            - 8125:8125/udp
