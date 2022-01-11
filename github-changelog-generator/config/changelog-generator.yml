@@ -14,7 +14,7 @@ changelog:
           labels: ['dependency-upgrade']
         - title: ':memo: Tasks'
           labels: ['type: task']
-    contributors.exclude.names: ['shakuzen', 'jonatan-ivanov']
+    contributors.exclude.names: ['shakuzen', 'marcingrzejszczak', 'jonatan-ivanov']
 
 github:
     username: abc
