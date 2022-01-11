@@ -6,7 +6,7 @@ changelog:
           group: "noteworthy"
         - title: ':star: New Features / Enhancements'
           labels: ['enhancement']
-        - title: ':beetle: Bug Fixes'
+        - title: ':lady_beetle: Bug Fixes'
           labels: ['bug', 'regression']
         - title: ':notebook_with_decorative_cover: Documentation'
           labels: ['doc-update', 'documentation']
