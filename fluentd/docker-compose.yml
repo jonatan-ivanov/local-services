@@ -1,0 +1,13 @@
+version: "3"
+services:
+    fluentd:
+        image: fluentd
+        container_name: fluentd
+        restart: always
+        user: fluent
+        volumes:
+            - ./config/etc:/fluentd/etc:ro
+            - ./logs:/var/log/httpd:ro
+        ports:
+            - 24224:24224
+            - 24224:24224/udp
