@@ -1,0 +1,8 @@
+version: "3"
+services:
+    jifa:
+        container_name: jifa
+        image: jifadocker/jifa-worker:demo
+        restart: always
+        ports:
+            - 8102:8102
