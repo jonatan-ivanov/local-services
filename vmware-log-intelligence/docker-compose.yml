@@ -1,0 +1,17 @@
+version: "3"
+services:
+    vmware-log-intelligence:
+        container_name: vmware-log-intelligence
+        image: vmware/log-intelligence-fluentd
+        restart: always
+        command: fluentd
+        environment:
+            LOGS_API_KEY: ${LOGS_API_KEY}
+            NODE_NAME: ${HOST} # HOST needs to be exported, see the README
+            FLUENTD_ARGS: --no-supervisor -q
+        volumes:
+            - ./config/fluent.conf:/etc/fluent/fluent.conf:ro
+            - ./logs:/var/log/httpd:ro
+        ports:
+            - 24224:24224
+            - 24224:24224/udp
