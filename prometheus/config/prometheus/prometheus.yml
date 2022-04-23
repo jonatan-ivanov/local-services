@@ -10,3 +10,7 @@ scrape_configs:
       metrics_path: '/actuator/prometheus'
       static_configs:
           - targets: ['host.docker.internal:8080']
+    # - job_name: 'eureka'
+    #   metrics_path: '/actuator/prometheus'
+    #   eureka_sd_configs:
+    #       - server: http://host.docker.internal:8761/eureka
