@@ -2,7 +2,7 @@ version: "3"
 services:
     toxiproxy:
         container_name: toxiproxy
-        image: shopify/toxiproxy
+        image: ghcr.io/shopify/toxiproxy
         command: -host=0.0.0.0 -config /config/toxiproxy.json
         restart: always
         volumes:
@@ -12,5 +12,13 @@ services:
             - 8800:8800
             - 8801:8801
             - 8802:8802
-# /go/bin/toxiproxy-cli create httpbin --listen :8888 --upstream httpbin.org:443
-# /go/bin/toxiproxy-cli toxic add httpbin -t latency -a latency=5000
+    toxiproxy-ui:
+        container_name: toxiproxy-ui
+        image: buckle/toxiproxy-frontend
+        restart: always
+        environment:
+            TOXIPROXY_URL: http://host.docker.internal:8474
+        depends_on:
+            - toxiproxy
+        ports:
+            - 8484:8080
