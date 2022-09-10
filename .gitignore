@@ -1,3 +1,5 @@
+.vscode/
+
 artifactory/local-data/*
 !artifactory/local-data/etc/
 artifactory/local-data/etc/*
