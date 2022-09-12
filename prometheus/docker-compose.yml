@@ -20,4 +20,4 @@ services:
             - ./config/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
         ports:
             - 3000:3000
-# Grafana creds: admin:admin
+# Grafana credentials: admin:admin
