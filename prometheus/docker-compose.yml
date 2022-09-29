@@ -15,9 +15,12 @@ services:
         image: grafana/grafana
         container_name: grafana
         restart: always
+        environment:
+            - GF_AUTH_ANONYMOUS_ENABLED=true
+            - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+            - GF_AUTH_DISABLE_LOGIN_FORM=true
         volumes:
             - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
             - ./config/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
         ports:
             - 3000:3000
-# Grafana credentials: admin:admin
