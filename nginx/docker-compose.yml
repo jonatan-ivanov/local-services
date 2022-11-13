@@ -5,6 +5,7 @@ services:
         image: nginx
         restart: always
         volumes:
+            - ./config/handlers.js:/etc/nginx/handlers.js:ro
             - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
             - ./content:/usr/share/nginx/html:ro
         ports:
