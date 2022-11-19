@@ -1,8 +1,9 @@
 version: "3"
 services:
     fluentd:
-        image: fluentd
         container_name: fluentd
+        image: fluentd
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         user: fluent
         volumes:

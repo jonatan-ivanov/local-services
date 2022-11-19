@@ -3,6 +3,7 @@ services:
     mongo:
         container_name: mongo
         image: mongo
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         # environment:
         #   MONGO_INITDB_ROOT_USERNAME: root
@@ -15,6 +16,7 @@ services:
     mongo-express:
         container_name: mongo-express
         image: mongo-express
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         # environment:
         #   ME_CONFIG_MONGODB_ADMINUSERNAME: root

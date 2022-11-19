@@ -3,6 +3,7 @@ services:
     zipkin:
         container_name: zipkin
         image: openzipkin/zipkin
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 9411:9411

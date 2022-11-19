@@ -3,6 +3,7 @@ services:
     artifactory:
         container_name: artifactory
         image: releases-docker.jfrog.io/jfrog/artifactory-oss
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         volumes:
             - ./local-data:/var/opt/jfrog/artifactory

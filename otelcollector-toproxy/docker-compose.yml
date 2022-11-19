@@ -3,6 +3,7 @@ services:
     wavefront-proxy:
         container_name: wavefront-proxy
         image: wavefronthq/proxy:latest
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         environment:
             WAVEFRONT_URL: ${WAVEFRONT_URL}
@@ -16,6 +17,7 @@ services:
     otel:
         container_name: otel
         image: otel/opentelemetry-collector-contrib
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         volumes:
             - ./config:/etc/otel

@@ -3,6 +3,7 @@ services:
     github-changelog-generator:
         container_name: github-changelog-generator
         image: springio/github-changelog-generator:0.0.8
+        extra_hosts: ['host.docker.internal:host-gateway']
         command: [ 'java', '-jar', '/github-changelog-generator.jar', '--spring.config.location=/config/changelog-generator.yml', '1.10.0', '/generated/changelog.md']
         volumes:
             - ./config:/config

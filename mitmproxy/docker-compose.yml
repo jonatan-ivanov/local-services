@@ -3,6 +3,7 @@ services:
     mitmproxy:
         container_name: mitmproxy
         image: mitmproxy/mitmproxy
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         command: ['mitmweb', '--web-host', '0.0.0.0']
         ports:

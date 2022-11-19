@@ -3,6 +3,7 @@ services:
     nexus:
         container_name: nexus
         image: sonatype/nexus
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 8081:8081

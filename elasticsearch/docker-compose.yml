@@ -3,6 +3,7 @@ services:
     elasticsearch:
         container_name: elasticsearch
         image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         environment:
             discovery.type: single-node
@@ -15,6 +16,7 @@ services:
     kibana:
         container_name: kibana
         image: docker.elastic.co/kibana/kibana:7.10.2
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         depends_on:
             - elasticsearch

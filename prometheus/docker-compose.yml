@@ -3,6 +3,7 @@ services:
     prometheus:
         image: prom/prometheus
         container_name: prometheus
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         command:
             - --enable-feature=exemplar-storage
@@ -14,6 +15,7 @@ services:
     grafana:
         image: grafana/grafana
         container_name: grafana
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         environment:
             - GF_AUTH_ANONYMOUS_ENABLED=true

@@ -3,6 +3,7 @@ services:
     telegraf:
         image: telegraf
         container_name: telegraf
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         volumes:
             - ./config/telegraf.conf:/etc/telegraf/telegraf.conf:ro \

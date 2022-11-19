@@ -3,6 +3,7 @@ services:
     maildev:
         container_name: maildev
         image: djfarrelly/maildev
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 80:80

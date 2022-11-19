@@ -3,14 +3,16 @@ services:
     zookeeper:
         container_name: zookeeper
         image: wurstmeister/zookeeper
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 2181:2181
         environment:
             KAFKA_ADVERTISED_HOST_NAME: zookeeper
     kafka:
-        image: wurstmeister/kafka
         container_name: kafka
+        image: wurstmeister/kafka
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 9092:9092
@@ -25,6 +27,7 @@ services:
     kafdrop:
         container_name: kafdrop
         image: obsidiandynamics/kafdrop
+        extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         ports:
             - 9000:9000
