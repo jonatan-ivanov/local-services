@@ -1,8 +1,8 @@
 version: "3"
 services:
     telegraf:
-        image: telegraf
         container_name: telegraf
+        image: telegraf
         extra_hosts: ['host.docker.internal:host-gateway']
         restart: always
         volumes:
