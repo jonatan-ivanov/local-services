@@ -12,7 +12,6 @@ services:
             - ./local-data:/var/lib/mysql
         ports:
             - 3306:3306
-
     adminer:
         container_name: adminer
         image: adminer
