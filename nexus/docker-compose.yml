@@ -1,13 +1,14 @@
-version: "3"
+version: '3'
 services:
     nexus:
         container_name: nexus
         image: sonatype/nexus
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         ports:
             - 8081:8081
+
 # http://localhost:8081/nexus/service/local/status
 # http://localhost:8081/nexus/
 
-# creds: admin:admin123
+# credentials: admin:admin123

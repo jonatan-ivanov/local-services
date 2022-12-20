@@ -1,5 +1,4 @@
 apiVersion: 1
-
 datasources:
     - name: Prometheus
       type: prometheus
@@ -7,7 +6,7 @@ datasources:
       url: http://host.docker.internal:9090
       editable: false
       jsonData:
-        httpMethod: POST
-        exemplarTraceIdDestinations:
-          - name: trace_id
-            url: http://localhost:9411/zipkin/traces/$${__value.raw}
+          httpMethod: POST
+          exemplarTraceIdDestinations:
+              - name: trace_id
+                url: http://localhost:9411/zipkin/traces/$${__value.raw}

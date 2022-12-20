@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     toxiproxy:
         container_name: toxiproxy
         image: ghcr.io/shopify/toxiproxy
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         command: -host=0.0.0.0 -config /config/toxiproxy.json
         restart: always
         volumes:
@@ -16,7 +16,7 @@ services:
     toxiproxy-ui:
         container_name: toxiproxy-ui
         image: buckle/toxiproxy-frontend
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         environment:
             TOXIPROXY_URL: http://host.docker.internal:8474

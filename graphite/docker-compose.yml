@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     graphite:
         container_name: graphite
         image: graphiteapp/graphite-statsd
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         environment:
             STATSD_INTERFACE: tcp
@@ -15,4 +15,5 @@ services:
             - 2024:2024
             - 8125:8125
             - 8126:8126
-# creds: root:root
+
+# credentials: root:root

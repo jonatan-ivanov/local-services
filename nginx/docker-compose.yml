@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     nginx:
         container_name: nginx
         image: nginx
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         volumes:
             - ./config/handlers.js:/etc/nginx/handlers.js:ro

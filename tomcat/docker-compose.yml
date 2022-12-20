@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     tomcat:
         container_name: tomcat
         image: tomcat
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         volumes:
             - ./webapps:/usr/local/tomcat/webapps

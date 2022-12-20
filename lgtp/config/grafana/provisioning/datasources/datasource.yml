@@ -1,5 +1,4 @@
 apiVersion: 1
-
 datasources:
     - name: Prometheus
       type: prometheus
@@ -8,10 +7,10 @@ datasources:
       url: http://host.docker.internal:9090
       editable: true
       jsonData:
-        httpMethod: POST
-        exemplarTraceIdDestinations:
-          - name: trace_id
-            datasourceUid: tempo
+          httpMethod: POST
+          exemplarTraceIdDestinations:
+              - name: trace_id
+                datasourceUid: tempo
     - name: Tempo
       type: tempo
       uid: tempo
@@ -20,27 +19,35 @@ datasources:
       isDefault: true
       editable: true
       jsonData:
-        httpMethod: GET
-        tracesToMetrics:
-          datasourceUid: prometheus
-          tags: [{ key: 'service.name', value: 'application' }, { key: 'method' }, { key: 'uri' }, { key: 'outcome' }, { key: 'status' }, { key: 'exception' }]
-          queries:
-            - name: 'Throughput'
-              query: 'sum(rate(http_server_requests_seconds_count{$$__tags}[$$__interval]))'
-            - name: 'Latency'
-              query: 'http_server_requests_seconds_max{$$__tags}'
-        tracesToLogs:
-          datasourceUid: loki
-          mappedTags: [{ key: 'service.name', value: 'application' }]
-          mapTagNamesEnabled: true
-          filterByTraceID: true
-          filterBySpanID: false
-        lokiSearch:
-          datasourceUid: loki
-        serviceMap:
-          datasourceUid: prometheus
-        nodeGraph:
-          enabled: true
+          httpMethod: GET
+          tracesToMetrics:
+              datasourceUid: prometheus
+              tags:
+                  [
+                      { key: "service.name", value: "application" },
+                      { key: "method" },
+                      { key: "uri" },
+                      { key: "outcome" },
+                      { key: "status" },
+                      { key: "exception" },
+                  ]
+              queries:
+                  - name: 'Throughput'
+                    query: 'sum(rate(http_server_requests_seconds_count{$$__tags}[$$__interval]))'
+                  - name: 'Latency'
+                    query: 'http_server_requests_seconds_max{$$__tags}'
+          tracesToLogs:
+              datasourceUid: loki
+              mappedTags: [{ key: "service.name", value: "application" }]
+              mapTagNamesEnabled: true
+              filterByTraceID: true
+              filterBySpanID: false
+          lokiSearch:
+              datasourceUid: loki
+          serviceMap:
+              datasourceUid: prometheus
+          nodeGraph:
+              enabled: true
     - name: Loki
       type: loki
       uid: loki
@@ -48,8 +55,8 @@ datasources:
       url: http://host.docker.internal:3100
       editable: true
       jsonData:
-        derivedFields:
-          - datasourceUid: tempo
-            matcherRegex: '\w+ \[.+,(\w*),\w*\] \d+'
-            name: traceId
-            url: $${__value.raw}
+          derivedFields:
+              - datasourceUid: tempo
+                matcherRegex: '\w+ \[.+,(\w*),\w*\] \d+'
+                name: traceId
+                url: $${__value.raw}

@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     mariadb:
         container_name: mariadb
         image: mariadb
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
@@ -16,7 +16,7 @@ services:
     adminer:
         container_name: adminer
         image: adminer
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         environment:
             ADMINER_DEFAULT_SERVER: mariadb

@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     prometheus:
         container_name: prometheus
         image: prom/prometheus
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         command:
             - --enable-feature=exemplar-storage
@@ -16,7 +16,7 @@ services:
     grafana:
         container_name: grafana
         image: grafana/grafana
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         environment:
             - GF_AUTH_ANONYMOUS_ENABLED=true
@@ -31,21 +31,21 @@ services:
     tempo:
         container_name: tempo
         image: grafana/tempo
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
-        command: ['-config.file=/etc/tempo.yml']
+        command: [ '-config.file=/etc/tempo.yml' ]
         volumes:
             - ./config/grafana/tempo.yml:/etc/tempo.yml:ro
             - ./tempo-data/:/tmp/tempo
         ports:
-            - 3200:3200    # tempo
-            - 9411:9411    # zipkin
+            - 3200:3200 # tempo
+            - 9411:9411 # zipkin
             # - 14268:14268  # jaeger
     loki:
         container_name: loki
         image: grafana/loki
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
-        command: ['-config.file=/etc/loki/local-config.yaml']
+        command: [ '-config.file=/etc/loki/local-config.yaml' ]
         ports:
             - 3100:3100

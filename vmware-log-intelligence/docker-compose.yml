@@ -1,9 +1,9 @@
-version: "3"
+version: '3'
 services:
     vmware-log-intelligence:
         container_name: vmware-log-intelligence
         image: vmware/log-intelligence-fluentd
-        extra_hosts: ['host.docker.internal:host-gateway']
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
         restart: always
         command: fluentd
         environment:
