@@ -9,10 +9,10 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
         volumes:
+            - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
             - ./local-data:/var/lib/mysql
         ports:
             - 3306:3306
-
     adminer:
         container_name: adminer
         image: adminer
@@ -24,3 +24,5 @@ services:
             - mariadb
         ports:
             - 8888:8080
+
+# credentials: root:password
