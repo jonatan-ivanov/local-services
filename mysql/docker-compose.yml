@@ -24,3 +24,5 @@ services:
             - mysql
         ports:
             - 8888:8080
+
+# credentials: root:password
