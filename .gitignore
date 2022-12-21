@@ -11,4 +11,5 @@ lgtp/tempo-data/
 mariadb/local-data/
 mongo/local-data/
 mysql/local-data/
+postgres/local-data/
 tomcat/webapps/ROOT/
