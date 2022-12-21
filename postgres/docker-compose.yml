@@ -1,0 +1,23 @@
+version: '3'
+services:
+    postgres:
+        container_name: postgres
+        image: postgres
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        ports:
+            - 5432:5432
+    adminer:
+        container_name: adminer
+        image: adminer
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        restart: always
+        environment:
+            ADMINER_DEFAULT_SERVER: postgres
+        depends_on:
+            - postgres
+        ports:
+            - 8888:8080
