@@ -26,3 +26,4 @@ services:
             - 8888:8080
 
 # credentials: root:password
+# http://localhost:8888/?server=mysql&username=root

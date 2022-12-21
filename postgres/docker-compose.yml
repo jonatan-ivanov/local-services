@@ -27,3 +27,4 @@ services:
             - 8888:8080
 
 # credentials: postgres:password
+# http://localhost:8888/?pgsql=postgres&username=postgres
