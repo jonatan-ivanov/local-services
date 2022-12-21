@@ -1,10 +1,10 @@
-CREATE DATABASE testDB;
-USE testDB;
+CREATE DATABASE testdb;
+USE testdb;
 
 CREATE TABLE users (
-    id int NOT NULL AUTO_INCREMENT,
-    username varchar(255) NOT NULL,
-    email varchar(255) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
