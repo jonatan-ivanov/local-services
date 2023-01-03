@@ -7,7 +7,7 @@ artifactory/local-data/etc/*
 
 elasticsearch/local-data/
 github-changelog-generator/generated/
-lgtp/tempo-data/
+loki-grafana-tempo-prometheus/tempo-data/
 mariadb/local-data/
 mongo/local-data/
 mysql/local-data/
