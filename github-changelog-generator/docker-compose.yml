@@ -10,7 +10,7 @@ services:
                 '-jar',
                 '/github-changelog-generator.jar',
                 '--spring.config.location=/config/changelog-generator.yml',
-                '1.10.0',
+                '1.11.0',
                 '/generated/changelog.md'
             ]
         volumes:
