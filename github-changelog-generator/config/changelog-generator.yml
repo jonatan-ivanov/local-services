@@ -14,8 +14,6 @@ changelog:
           labels: [ 'dependency-upgrade' ]
         - title: ':memo: Tasks'
           labels: [ 'type: task' ]
+    issues:
+        generate_links: true
     contributors.exclude.names: [ 'shakuzen', 'marcingrzejszczak', 'jonatan-ivanov', 'dependabot[bot]' ]
-
-github:
-    username: abc
-    password: xyz

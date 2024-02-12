@@ -2,8 +2,13 @@ version: '3'
 services:
     github-changelog-generator:
         container_name: github-changelog-generator
-        image: springio/github-changelog-generator:0.0.8
+        image: springio/github-changelog-generator:0.0.9
         extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        environment:
+            # Set credentials in an .env file
+            # https://docs.docker.com/compose/environment-variables/set-environment-variables/#substitute-with-an-env-file
+            - GITHUB_USERNAME=${GITHUB_USERNAME}
+            - GITHUB_PASSWORD=${GITHUB_PASSWORD}
         command:
             [
                 'java',
