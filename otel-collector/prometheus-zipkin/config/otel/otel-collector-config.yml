@@ -2,7 +2,9 @@ receivers:
     otlp:
         protocols:
             grpc:
+                endpoint: 0.0.0.0:4317
             http:
+                endpoint: 0.0.0.0:4318
     # https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/simpleprometheusreceiver
     # prometheus_simple:
     #     collection_interval: 10s
