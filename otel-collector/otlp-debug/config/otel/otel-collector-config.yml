@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+exporters:
+  # https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/prometheusexporter
+  prometheus:
+    endpoint: '0.0.0.0:8889'
+    metric_expiration: 1m
+    enable_open_metrics: true
+    resource_to_telemetry_conversion:
+      enabled: true
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus, debug]
+    traces:
+        receivers: [otlp]
+        exporters: [debug]
