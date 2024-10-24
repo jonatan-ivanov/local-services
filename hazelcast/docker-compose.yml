@@ -1,0 +1,8 @@
+services:
+    hazelcast:
+        container_name: hazelcast
+        image: hazelcast/hazelcast
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        restart: always
+        ports:
+            - 5701:5701
