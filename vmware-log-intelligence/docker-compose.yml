@@ -1,4 +1,3 @@
-version: '3'
 services:
     vmware-log-intelligence:
         container_name: vmware-log-intelligence

@@ -1,4 +1,3 @@
-version: '3'
 services:
     tomcat:
         container_name: tomcat

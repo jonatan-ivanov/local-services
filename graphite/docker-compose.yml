@@ -1,4 +1,3 @@
-version: '3'
 services:
     graphite:
         container_name: graphite

@@ -1,4 +1,3 @@
-version: '3'
 services:
     github-changelog-generator:
         container_name: github-changelog-generator

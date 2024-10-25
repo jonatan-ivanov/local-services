@@ -1,4 +1,3 @@
-version: '3'
 services:
     jaeger:
         container_name: jaeger

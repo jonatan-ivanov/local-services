@@ -1,4 +1,3 @@
-version: '3'
 name: otel-collector-toproxy
 services:
     wavefront-proxy:

@@ -1,4 +1,3 @@
-version: '3'
 services:
     artifactory:
         container_name: artifactory

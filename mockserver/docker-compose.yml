@@ -1,4 +1,3 @@
-version: '3'
 services:
     mockserver:
         container_name: mockserver
