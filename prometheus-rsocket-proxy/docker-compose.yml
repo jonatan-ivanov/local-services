@@ -1,0 +1,8 @@
+services:
+    prometheus-rsocket-proxy:
+        container_name: prometheus
+        image: micrometermetrics/prometheus-rsocket-proxy
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        restart: always
+        ports:
+            - 8080:8080
