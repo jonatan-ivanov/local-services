@@ -21,6 +21,7 @@ services:
             - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
             - GF_AUTH_DISABLE_LOGIN_FORM=true
         volumes:
+            - ./config/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
             - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
             - ./config/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
         ports:
