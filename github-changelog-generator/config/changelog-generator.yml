@@ -11,7 +11,7 @@ changelog:
         - title: ':notebook_with_decorative_cover: Documentation'
           labels: [ 'doc-update', 'documentation' ]
         - title: ':hammer: Dependency Upgrades'
-          labels: [ 'dependency-upgrade' ]
+          labels: [ 'dependency-upgrade', 'dependencies' ]
         - title: ':memo: Tasks'
           labels: [ 'type: task' ]
     issues:
