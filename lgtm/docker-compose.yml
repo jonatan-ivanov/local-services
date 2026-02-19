@@ -1,0 +1,12 @@
+services:
+    grafana:
+        container_name: grafana
+        image: grafana/otel-lgtm
+        extra_hosts: [ 'host.docker.internal:host-gateway' ]
+        restart: always
+        ports:
+            - 3000:3000
+            - 4317:4317
+            - 4318:4318
+            - 4040:4040
+            - 9090:9090
